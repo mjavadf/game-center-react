@@ -15,7 +15,7 @@ function GamesGrid() {
         column={3}
         spacing={10}
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        padding={10}
+        padding={3}
       >
         {isLoading &&
           skeletons.map((s) => (
