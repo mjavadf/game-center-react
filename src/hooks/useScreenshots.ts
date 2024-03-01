@@ -1,14 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
+import Screenshot from "../entities/Screenshot";
 import APIClient from "../services/api-client";
 import ms from "../utilities/ms";
-
-interface Screenshot {
-  id: number;
-  image: string;
-  width: number;
-  height: number;
-  isDeleted: boolean;
-}
 
 const useScreenshots = (id: number | string) => {
   const apiClient = new APIClient<Screenshot>(`/games/${id}/screenshots`);

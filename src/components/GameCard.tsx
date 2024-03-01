@@ -1,9 +1,9 @@
-import { Game } from "../hooks/useGames";
 import { Card, CardBody, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "../services/image-url";
 import { Link } from "react-router-dom";
+import Game from "../entities/Game";
 
 interface Props {
   game: Game;
@@ -14,7 +14,7 @@ function GameCard({ game }: Props) {
     <Card
       _hover={{
         background: "gray.600",
-        transition: "transform .15s ease-in"
+        transition: "transform .15s ease-in",
       }}
     >
       <Image src={getCroppedImageUrl(game.background_image)} />
