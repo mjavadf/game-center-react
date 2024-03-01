@@ -1,4 +1,4 @@
-import { Box, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, GridItem, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import { Spinner } from "@chakra-ui/spinner";
 import React from "react";
 import { useParams } from "react-router-dom";
@@ -17,16 +17,20 @@ function GameDetailPage() {
 
   if (error) throw error;
 
-  if (!slug) return null
+  if (!slug) return null;
 
   return (
-    <>
-      <Heading>{game?.name}</Heading>
-      <Collapse maxLength={200}>{game?.description_raw}</Collapse>
-      <GameAttributes game={game!} />
-      <GameTrailer slug={slug} />
-      <GameScreenshots slug={slug} />
-    </>
+    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={2}>
+      <GridItem>
+        <Heading>{game?.name}</Heading>
+        <Collapse maxLength={500}>{game?.description_raw}</Collapse>
+        <GameAttributes game={game!} />
+      </GridItem>
+      <GridItem>
+        <GameTrailer slug={slug} />
+        <GameScreenshots slug={slug} />
+      </GridItem>
+    </SimpleGrid>
   );
 }
 

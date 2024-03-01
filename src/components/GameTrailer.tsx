@@ -14,8 +14,7 @@ function GameTrailer({slug}: Props) {
     <video 
     src={firstTrailer.data[480]}
     poster={firstTrailer.preview}
-    controls
-    width={"480px"}/>
+    controls/>
   )
 }
 
