@@ -4,6 +4,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Collapse from "../components/Collapse";
 import GameAttributes from "../components/GameAttributes";
+import GameScreenshots from "../components/GameScreenshots";
 import GameTrailer from "../components/GameTrailer";
 import useGame from "../hooks/useGame";
 import useTrailers from "../hooks/useTrailers";
@@ -24,6 +25,7 @@ function GameDetailPage() {
       <Collapse maxLength={200}>{game?.description_raw}</Collapse>
       <GameAttributes game={game!} />
       <GameTrailer slug={slug} />
+      <GameScreenshots slug={slug} />
     </>
   );
 }
