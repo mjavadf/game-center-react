@@ -1,8 +1,11 @@
-import { Button, Heading, Text } from "@chakra-ui/react";
+import {
+  Heading
+} from "@chakra-ui/react";
 import { Spinner } from "@chakra-ui/spinner";
 import React from "react";
 import { useParams } from "react-router-dom";
 import Collapse from "../components/Collapse";
+import GameAttributes from "../components/GameAttributes";
 import useGame from "../hooks/useGame";
 
 function GameDetailPage() {
@@ -19,9 +22,8 @@ function GameDetailPage() {
   return (
     <>
       <Heading>{game?.name}</Heading>
-      <Collapse maxLength={200} isOpen={show}>
-        {game?.description_raw}
-      </Collapse>
+      <Collapse maxLength={200}>{game?.description_raw}</Collapse>
+      <GameAttributes game={game!} />
     </>
   );
 }
