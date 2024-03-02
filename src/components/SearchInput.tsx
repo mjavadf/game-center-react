@@ -26,6 +26,7 @@ function SearchInput() {
           borderRadius={20}
           placeholder="Search games ..."
           variant={"filled"}
+          id={'searchField'}
         />
       </InputGroup>
     </form>
